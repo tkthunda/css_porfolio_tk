@@ -1,28 +1,34 @@
 * {
     box-sizing: border-box;
 }
-
-
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5vw;
+    font-size: 2vw;
     margin: 0;
     padding: 0.5em;
 }
 
 /*styling for mobile (<600px)*/
-body{
-    background-color: forestgreen;
-}
-.navBar {
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 0.5em;
-    background-color: rgb(170, 170, 170);
-    padding: 0.5em;
-    height: 15.5em;
-    margin-top: 5em;
-    font-size: 1.2em;
+@media screen and (max-width:600px) {
+    body{
+        background-color: forestgreen;
+    }
+    .navBar {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 0.5em;
+        background-color: rgb(170, 170, 170);
+        padding: 0.5em;
+        margin: 0.5em;
+        height: auto;
+        width: 6em;
+        font-size: 1.2em;
+    }
+    #projectsContent {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 0.5em;
+    }
 }
 
 
@@ -31,18 +37,23 @@ body{
     body{
         background-color: aquamarine;
     }
-.navBar {
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 0.5em;
-    background-color: rgb(170, 170, 170);
-    padding: 0.5em;
-    height: 15.5em;
-    margin-top: 5em;
-    font-size: 1.2em;
+    .navBar {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 0.5em;
+        background-color: rgb(170, 170, 170);
+        padding: 0.5em;
+        margin: 0.5em;
+        height: auto;
+        width: 6em;
+        font-size: 1.2em;
+    }
+    #projectsContent {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 0.5em;
+    }
 }
-}
-
 
 /*styling for desktop (>900px)*/
 @media screen and (min-width:900px){
@@ -50,16 +61,25 @@ body{
         background-color:rgb(97, 86, 86);
     }
     .navBar {
-    display:grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-gap:0.5em;
-    background-color: rgb(170, 170, 170);
-    padding:0.5em;
-    height: 3.5em;
-    margin: top 5em;
-    font-size: 1.2em;
-}}
+        display:grid;
+        grid-template-columns: auto auto auto auto auto;
+        grid-gap:0.5em;
+        background-color: rgb(170, 170, 170);
+        padding:0.5em;
+        margin: 0.5em;
+        height: auto;
+        width: auto;
+        font-size: 1.2em;
+    }
+    #projectsContent {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 0.5em;
+    }
+}
 
+
+/* styling the navBar */
 .navBar div{
     background-color: rgb(52, 94, 80);
     border: 1px solid black;
@@ -67,43 +87,119 @@ body{
     padding:0.5em;
     text-align: center;
     width: auto;
-    height: 2.5em;
-    float: left;
+    height: auto;
 }
-
 .navBar a{
     text-decoration: none;
     color:black;
 }
-
 .navBar :hover{
         background-color: rgb(37, 167, 123);
 }
 
-
-
-/* styling all h1 tags */
-h1 {
+/* styling classes that get reused for each section */
+.sectionBody{
+    background-color: rgb(82, 95, 70);
+    padding:0.1em;
+    border: 5px black dotted;
+    margin: 0.5em;
+}
+.headerDiv {
     color: rgb(185, 41, 41);
     background-color: black;
-    font-size: 2.5em;
-    height: 1.5em;
-}
-
-.sectionBody{
-    height: auto;
-    min-height: 50em;
-    width: auto;
-    display: flex;
+    font-size: 1em;
+    text-align: center;
     margin: 0.5em;
-    background-color: rgb(82, 95, 70);
-    padding:1em;
+    border: 10px white solid;
+    border-radius: 10px;
+}
+.content {
+    background-color: rgb(13, 105, 48);
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 1em;
+    margin: 0.5em;
+    border: 10px rgb(255, 18, 129) solid;
 }
 
-.sectionText{
-    background-color:rgb(71, 71, 148);
-    width: 30em;
+/* styling the header/navBar card */
+#introBody{
+    background-color: rgb(145, 95, 30);
     height: auto;
-    max-height: 20em;
+    width: auto;
+    padding: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px white dashed;
+}
+
+/* styling the about page */
+#aboutContent img{
+    height: 10em;
+    width: 10em;
+}
+#aboutContent p{
+    color: rgb(170, 170, 170);
+}
+#aboutText{
+    background-color: rgb(71, 71, 148);
+    width: auto;
+    height: auto;
+    padding: 1em 2em 1em 2em;
+    margin: 0.5em;
+}
+/* styling the projects page */
+.projCard{
+    background-color: skyblue;
+    border:5px dashed purple;
+    margin: 0.5em;
+    padding: 1em;
+}
+
+.projCard h1{
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.projCard p{
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+.projCard img{
+    height: 10em;
+    width: 10em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* styling the skills page */
+#skillsContent{
+    background-color: darkviolet;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 0.5em;
+}
+#skillsContent :hover {
+    background-color: rgb(255, 94, 94);
+}
+.skillBlock{
+    text-align: center;
+    background-color: firebrick;
+    border: 3px white solid;
+    padding: 0.5em
+}
+.skillBlock h1{
+    color: white
+}
+.skillBlock p{
+    color: rgb(173, 173, 173);
+}
+
+/* styling the contact page */
+#contactContent{
+    background-color: lawngreen;
 }
