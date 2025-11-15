@@ -6,7 +6,7 @@ body{
     font-size: 2vw;
     margin: 0;
     padding: 0.5em;
-    background-color: rgb(71, 96, 121);
+    background-color: rgb(12, 59, 105);
     color: white;
     text-shadow: 0.25em 0.25em 0.5em black;
 }
@@ -95,6 +95,15 @@ body{
 }
 
 /* styling the header/navBar card */
+@keyframes introAnim{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 #introBody{
     background-color: dodgerblue;
     padding: 0.5em;
@@ -102,6 +111,8 @@ body{
     display: grid;
     grid-gap: 0.5em;
     align-items: center;
+    animation-name: introAnim;
+    animation-duration: 2s;
 }
 /* styling the navBar */
 .navBar {
@@ -114,8 +125,8 @@ body{
     width: auto;
     border-radius: 0.5em;
     align-items: center;
-}
 
+}
 .navBar div {
     background-color: rgb(4, 98, 192);
     border: 1px solid black;
@@ -124,12 +135,10 @@ body{
     text-align: center;
     width: auto;
 }
-
 .navBar a {
     text-decoration: none;
     color: white;
 }
-
 .navBar :hover {
     background-color: rgb(146, 201, 255);
 }
@@ -152,6 +161,15 @@ body{
 }
 
 /* styling the projects page */
+@keyframes projCardAnim {
+    from {
+        box-shadow: 0em 0em 0.5em black;
+    }
+
+    to {
+        box-shadow: 1em 1em 1em 1em 0.5em black;
+    }
+}
 .projCard{
     background-color: rgb(4, 98, 192);
     border-radius: 0.5em;
@@ -174,6 +192,10 @@ body{
 }
 .projCard:hover {
     background-color: rgb(1, 64, 128);
+    animation-name: projCardAnim;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 /* styling the skills page */
@@ -188,8 +210,8 @@ body{
 .skillBlock{
     text-align: center;
     background-color: rgb(4, 98, 192);
-    border: 3px white solid;
-    padding: 0.5em 0.5em 1em 0.5em;
+    border-radius:0.5em;
+    padding: 0.5em 1em 1em 1em;
 }
 
 /* styling the contact page */
@@ -236,9 +258,9 @@ body{
     background-color: rgb(255, 255, 255);
 }
 input[type=submit]{
-    color:black;
+    color:white;
     background-color: dodgerblue;
-    border: .15em black solid;
+    border: .15em white solid;
     border-radius: .5em;
     padding: 1.5em 0.5em;
     margin: 0.5em;
